@@ -1,0 +1,22 @@
+@font-face {
+	font-family: "Archiro";
+	src: url("/Archivo.ttf") format("opentype");
+	font-weight: 100 900;
+	font-width: 0% 100%;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Clash";
+	src: url("/ClashDisplay.ttf") format("opentype");
+	font-weight: 100 900; /* диапазон оси wght из шрифта */
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Inst";
+	src: url("/fonts/InstrumentSans-VariableFont_wdth,wght.woff2") format("woff2");
+	font-weight: 100 900; /* диапазон оси wght из шрифта */
+	font-display: swap;
+}
