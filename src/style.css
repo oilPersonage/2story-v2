@@ -15,7 +15,7 @@
 
 :root {
 	h1 {
-		@apply font-display text-lg md:text-4xl flex items-center justify-center relative z-2 bg-white px-3 py-3 w-fit;
+		@apply font-display text-lg h-[68px] md:text-4xl flex items-center justify-center relative z-2 bg-white px-3 py-3 w-fit pointer-events-none select-none;
 		font-weight: 500;
 		font-feature-settings:
 			"ss01" 0,
@@ -27,6 +27,7 @@
 	}
 	h2 {
 		@apply font-display text-2xl font-[500] max-md:leading-[26px];
+		scroll-margin: 24px;
 	}
 	h2 span {
 		@apply font-normal max-md:flex max-md:text-sm;
@@ -51,18 +52,89 @@ h1 > span:not(.h1-animate-wrapper) {
 }
 
 header {
-	@apply h-[200svh] justify-center min-h-svh max-w-svw relative;
+	@apply h-svh justify-center min-h-svh max-w-svw relative overflow-hidden;
 }
 header video {
 	@apply absolute inset-0 object-cover w-full h-full;
 }
 
 .header-texts {
-	@apply flex flex-col gap-2 fixed z-3 top-0;
+	@apply flex flex-col gap-2 fixed z-3 top-0 h-fit;
+}
+.header-texts.compact h1,
+.header-texts.compact .logotype {
+	@apply opacity-0 transition-opacity duration-300;
+}
+.header-texts.compact .header-buttons .button,
+.header-texts.compact .header-buttons .link {
+	@apply border border-dark;
+}
+.header-texts.compact .header-buttons:first-child .button {
+	@apply -translate-x-29;
 }
 
 .header-content {
-	@apply sticky min-h-svh top-0 z-2 flex-col gap-2 flex items-center justify-center;
+	@apply min-h-svh z-2 flex-col gap-2 flex items-center justify-center;
+}
+.menu-btn {
+	@apply p-0! opacity-0 w-full md:min-w-[260px] md:md:max-w-[260px]
+  text-ellipsis overflow-visible! min-w-[calc(100vw-104px-16px-4px)] max-w-[calc(100vw-104px-16px-4px)];
+}
+.menu-btn:hover .btn-menu-list {
+	@apply opacity-100;
+}
+.header-texts.compact .compact-hidden {
+  @apply max-md:hidden;
+}
+.header-texts:not(.compact) .menu-btn {
+  @apply max-md:hidden
+}
+.menu-btn--before .btn-menu-list {
+	@apply bottom-full;
+}
+.btn-menu-list {
+	@apply relative left-0 right-0 pointer-events-none;
+}
+.btn-menu-list.opened {
+  @apply pointer-events-auto;
+}
+.menu-btn-option {
+	@apply text-dark opacity-0 text-left min-w-full max-w-full px-4 py-3 hover:bg-neutral-100
+  transition-colors absolute top-0 bg-white text-ellipsis whitespace-nowrap overflow-hidden;
+}
+.menu-btn-option-city {
+  @apply text-neutral-500 text-sm;
+}
+.watch-button {
+  @apply flex;
+}
+.watch-button svg, .watch-button span {
+  @apply pointer-events-none;
+}
+.watch-button .resize {
+  @apply px-3.5! bg-white/80 border-white border border-l-0 cursor-pointer;
+}
+.watch-button .resize svg {
+  @apply h-4.5 w-4.5;
+}
+@keyframes AnimateResize  {
+  0%, 100% {
+    scale: 1
+  } 50% {
+    scale: 1.3
+  }
+}
+.watch-button .resize:hover svg {
+  animation: AnimateResize 0.6s ease;
+}
+.menu-btn .button-label {
+	@apply text-left block overflow-hidden text-ellipsis whitespace-nowrap text-white;
+}
+.menu-btn-overlay {
+  @apply absolute left-0 right-0;
+}
+.header-texts.compact .menu-btn {
+	@apply opacity-100;
 }
 .logotype .logotype-wrapper {
 	@apply absolute inset-0 h-full grid grid-cols-[repeat(var(--cols),1fr)] -skew-x-15;
@@ -71,7 +143,7 @@ header video {
 	@apply stroke-white fill-white/20;
 }
 .logotype {
-	@apply -mb-3 md:-mb-[8.5px] h-14 md:h-24 relative;
+	@apply -mb-3 md:-mb-[8.5px] h-14 md:h-20 relative pointer-events-auto;
 	-webkit-mask-image: url(/logo-mask.svg);
 	mask-image: url(/logo-mask.svg);
 	-webkit-mask-size: contain;
@@ -100,17 +172,17 @@ header video {
 	@apply bg-neutral-300 aspect-video;
 }
 .header-buttons {
-	@apply flex justify-between items-end overflow-hidden;
+	@apply absolute top-[calc(100%+4px)] left-0 right-0 flex justify-between items-end pointer-events-none;
 }
 .header-buttons:first-child {
-	@apply pb-2 -mb-2;
+	@apply top-auto bottom-[calc(100%+4px)];
 }
 
 .button {
-	@apply overflow-hidden px-4 py-2 md:px-6 md:py-3 bg-white text-white w-fit isolate cursor-pointer relative h-fit max-md:text-sm;
+	@apply relative z-4 overflow-hidden px-6 py-3 bg-white text-white w-fit isolate cursor-pointer h-fit pointer-events-auto font-display;
 }
 .button-bg {
-	@apply content-[''] -left-1/2 absolute z-1 inset-0 h-[200%] w-[200%] bg-dark -translate-y-full origin-center;
+	@apply content-[''] -left-1/2 absolute z-1 inset-0 h-[200%] w-[200%] -translate-y-full origin-center;
 }
 .button-label {
 	@apply flex;
@@ -151,7 +223,7 @@ header video {
 	}
 }
 .button-decor {
-	@apply flex w-full h-full bg-white;
+	@apply flex w-full h-full bg-dark;
 	animation: buttonDecor1 1s infinite ease-in-out alternate;
 }
 .button-decor-wrapper:nth-child(odd) .button-decor {
@@ -218,13 +290,13 @@ header video {
 	}
 }
 .link {
-	@apply cursor-pointer relative z-2 p-3 bg-white origin-center overflow-hidden transition-opacity duration-300;
+	@apply pointer-events-auto cursor-pointer relative z-2 p-3 bg-white origin-center overflow-hidden transition-opacity duration-300;
 }
 .link.icon {
-	@apply min-h-8 min-w-8 md:min-h-12 md:min-w-12 p-2.5;
+	@apply flex justify-center min-h-12 min-w-12.5;
 }
 .link.icon svg {
-	@apply h-4 md:w-6 w-4 md:h-6;
+	@apply h-6 w-6;
 }
 .link svg {
 	@apply h-4 w-4;

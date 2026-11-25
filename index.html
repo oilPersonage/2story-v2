@@ -18,6 +18,7 @@
           fullscreenControl: false,
           smallPlayButton: false,
           bigPlayButton: false,
+	        muted: true,
           playPauseNotifier: false
         }
       };
@@ -25,7 +26,7 @@
   </head>
   <body>
     <section id="photos" class="photos-wrapper">
-	    <h2>Radisson RED - <span>Da Nang, Vietnam</span></h2>
+	    <h2 id="Radisson Redbefore">Radisson RED - <span>Da Nang, Vietnam</span></h2>
 	    <div class="photos-grid">
 		    <div class="photo-poster">
 			    <img src="/photos/rd/1.webp" alt="">
@@ -91,7 +92,7 @@
 			    <img src="/photos/rd/21.webp" alt="">
 		    </div>
 	    </div>
-	    <h2>Four Seasons Resort The Nam Hai - <span>Hoi An, Vietnam</span></h2>
+	    <h2 id="Four Seasonsbefore">Four Seasons Resort The Nam Hai - <span>Hoi An, Vietnam</span></h2>
 	    <div class="photos-grid">
 		    <div class="photo-poster">
 			    <img src="/photos/fs/1.webp" alt="">
@@ -174,13 +175,13 @@
         <div class="header-texts">
 	        <div class="header-buttons">
 		        <div id="logotype" class="logotype">
-			        <svg aria-label="logotype" fill="var(--color-white)" viewBox="0 0 393 115" xmlns="http://www.w3.org/2000/svg">
-				        <path d="M392.725 0C387.245 16.541 378.227 39.7453 365.805 61.7764C355.193 80.5974 341.667 98.5028 326.677 114.628H307.832L306.8 113.638C315.89 104.624 330.269 89.4258 339.92 74.3086C334.285 75.1844 322.065 74.1909 320.072 70.8467C317.29 66.1762 322.301 49.823 326.367 38.293C326.033 38.9541 325.693 39.6191 325.34 40.2832C318.437 53.267 299.162 67.9456 283.914 78.6338C288.911 93.8185 297.215 101.049 306.497 106.26L301.854 114.628H286.637C281.756 110.213 277.625 105.111 275.102 100.121C272.967 95.9009 270.783 92.1981 269.358 88.2383L266.091 89.3281L256.573 114.628H238.521L238.416 114.592L241.843 106.479C239.26 109.163 235.887 112.031 232.053 114.628H190.929C190.179 113.321 189.553 111.873 189.029 110.278C187.13 104.498 187.77 95.8596 189.028 90.2744C191.572 78.9825 197.553 65.8932 203.074 54.9482C209.73 42.0015 218.394 29.7975 227.264 18.2734C227.556 17.8941 227.86 17.5058 228.174 17.1104H213.072C197.765 44.0622 177.903 87.2031 166.682 114.628H147.285C157.004 90.1168 178.402 44.3249 192.817 17.1104H173.86C175.064 29.4288 165.714 40.1221 160.943 47.1309L141.267 48.9385C141.322 48.8621 150.48 36.1291 154.713 26.8037C156.464 22.9464 157.223 19.8945 154.05 18.1709C150.877 16.4473 143.765 17.4884 137.468 21.0566C128.547 25.6744 121.858 34.3519 117.292 41.0303C113.339 46.8126 108.911 56.6753 111.426 59.0986C113.027 60.6413 118.478 60.1065 121.858 59.6299C132.663 58.1063 152.367 56.3552 156.035 70.3418C158.288 78.9336 152.136 89.3114 146.611 95.7275C142.255 100.787 134.848 108.346 125.692 114.628H0L5.01074 97.3125C7.15325 95.4553 10.0459 93.5423 12.8359 91.375C18.9577 87.4533 34.5234 77.5674 34.5234 77.5674C34.5578 77.5447 50.6751 66.8732 57.5205 61.6514C64.4945 56.3314 71.4631 49.0928 74.4521 45.917C81.4413 38.4911 83.7647 32.3966 84.0352 28.626C84.2771 25.2507 83.0821 24.2409 81.6406 23.4883C79.0324 22.1265 74.6622 22.3175 67.5312 26.0283C60.7175 29.5742 54.1098 35.2446 47.1055 44.1797C35.9443 58.4173 34.5234 70.4521 34.5234 70.4521L15.668 72.0215C16.3138 65.6694 19.6211 51.2808 32.376 33.834C38.6191 26.0591 45.3017 20.1013 51.9932 15.4893L99.084 13.3486C102.066 17.8755 102.676 23.7098 101.989 29.9131C101.721 31.6593 101.31 33.413 100.764 35.1719C101.669 33.6999 102.647 32.1997 103.715 30.6377C107.788 24.6797 113.625 17.756 120.177 12.3896L267.111 5.70996C269.365 8.46215 270.862 11.8336 271.566 15.1533C272.547 19.792 272.765 27.6995 272.402 34.1445L284.754 4.9082L332.344 2.74512C334.231 8.62683 334.373 15.4683 333.424 19.5107C333.36 19.7828 333.291 20.0558 333.223 20.3311C335.631 14.3998 338.295 8.09281 340.777 2.36133L357.159 1.61719C350.507 17.3892 334.293 58.5261 337.149 57.708C338.497 57.3218 349.516 56.0896 352.682 54.1855C362.425 37.178 370.767 19.3619 376.814 0.723633L392.725 0ZM94.4072 48.04C92.1961 51.3247 89.5453 54.6058 86.4775 57.8652C82.3671 62.2326 76.9839 67.8844 70.0166 73.1992C62.9278 78.6067 54.9265 84.9993 47.1094 89.9932C41.9353 93.2986 36.0932 97.1064 32.0693 100.074L53.8984 99.6562C53.5875 94.9809 54.2586 90.7696 54.7021 87.335L72.7773 85.918C72.2391 90.0863 72.1719 97.4704 74.1494 102.039C76.2115 105.707 80.3876 109.265 85.6299 109.881C95.5566 111.048 105.898 106.92 114.555 101.495C123.188 96.0847 130.059 89.3215 134.036 84.7021C142.244 75.169 131.443 75.8279 123.637 76.9287C119.844 77.4636 113.597 77.8565 109.227 77.6152C104.93 77.3781 98.9118 76.449 95.5566 72.6562C89.8349 66.1881 91.1993 57.1339 93.6016 50.25C93.8646 49.4962 94.1337 48.761 94.4072 48.04ZM246.241 71.2646C253.418 55.7151 263.311 11.5065 248.828 18.2734C235.777 30.9612 226.207 46.7195 217.758 62.751C212.101 73.9682 207.956 83.8548 205.982 92.6152C205.44 95.0214 203.831 103.789 207.401 104.675C225.541 109.172 240.17 84.419 246.241 71.2646ZM318.394 17.0273C320.104 8.16302 305.563 8.18369 299.6 10.6787L276.686 63.8809C291.702 52.9014 315.062 34.292 318.394 17.0273Z" fill="inherit"/>
+			        <svg aria-label="logotype" fill="var(--color-white)" viewBox="0 0 390 121" xmlns="http://www.w3.org/2000/svg">
+				        <path d="M389.858 0C382.985 18.6887 375.857 38.2303 361.148 64.1758C351.96 80.3847 335.278 106.967 319.749 120.597H301.14L299.681 112.166C310.662 110.992 325.451 92.9129 335.921 77.1816C328.972 80.0324 312.808 79.4649 310.662 76.2168C307.899 72.0339 311.294 57.6172 314.604 46.2178C307.191 58.8982 288.63 73.0067 273.851 83.3662C278.848 98.5509 287.151 105.781 296.434 110.992L291.104 120.597H277.982C272.492 115.914 267.801 110.316 265.038 104.854C262.904 100.633 260.72 96.9313 259.295 92.9717L256.027 94.0605L246.045 120.597H232.054L228.353 119.324L231.779 111.211C228.779 114.33 224.712 117.695 220.095 120.597H181.642C180.536 118.986 179.661 117.126 178.966 115.011C177.067 109.23 177.707 100.592 178.965 95.0068C181.509 83.7149 187.489 70.6257 193.011 59.6807C199.666 46.7339 208.33 34.5299 217.2 23.0059C217.492 22.6265 217.796 22.2382 218.11 21.8428H203.009C187.47 49.2031 167.236 93.2471 156.113 120.597H136.737C146.212 96.4174 168.092 49.5213 182.754 21.8428H165.973C166.795 29.2543 163.943 36.4741 161.29 41.5273C161.29 41.5273 153.301 54.6252 149.685 57.4482L133.376 49.3418C135.949 46.6878 141.913 37.5611 144.468 32.6953C147.305 27.2916 147.323 24.2623 146.928 23.2383C146.839 23.0096 145.477 20.5136 138.184 21.2139C131.62 21.8442 123.778 25.125 118.049 30.5566C112.624 35.6996 109.193 41.0324 107.736 45.3506C106.257 49.7381 107.17 51.6126 107.698 52.2627C107.831 52.4265 108.413 53.0236 110.642 53.6523C112.99 54.3149 115.684 54.6443 119.545 55.1953C122.98 55.6855 127.461 56.3718 131.602 58C135.978 59.7211 140.567 62.718 143.533 68.1113C147.26 74.8879 146.799 82.2649 144.851 88.4746C142.904 94.6786 139.23 100.636 134.981 105.81C130.511 111.253 124.855 116.476 118.775 120.597H62.1943C61.2247 119.281 60.3732 117.809 59.6699 116.168C59.6262 116.066 59.586 115.962 59.5439 115.859V120.597H0V102.907C0.136691 102.743 0.29058 102.581 0.464844 102.423C2.63984 100.447 5.73718 98.422 8.7168 96.1074C14.8314 92.1904 30.3653 82.324 30.4033 82.2998C30.4033 82.2998 46.5487 71.6111 53.4014 66.3838C60.3752 61.0639 67.343 53.8251 70.332 50.6494C77.3212 43.2235 79.6446 37.129 79.915 33.3584C80.157 29.9833 78.9619 28.9743 77.5205 28.2217C74.9122 26.8599 70.5422 27.0508 63.4111 30.7617C56.5975 34.3076 49.9896 39.9772 42.9854 48.9121C31.8242 63.1497 30.4033 75.1846 30.4033 75.1846L11.5479 76.7539C12.1937 70.4017 15.5011 56.013 28.2559 38.5664C34.5913 30.6765 41.3793 24.6575 48.1699 20.0176L94.4229 17.3076C96.076 19.5241 97.1002 22.0913 97.6416 24.8857C99.8128 22.0496 102.281 19.324 104.977 16.7686C105.006 16.7402 105.036 16.7119 105.066 16.6836L254.547 7.92676C258.218 10.946 260.564 15.4614 261.503 19.8857C262.483 24.5248 262.701 32.4336 262.339 38.8789L275.945 6.67285L320.906 4.03906C323.006 8.30759 323.903 13.6792 323.933 18.2305C325.774 13.1726 327.674 8.09909 329.423 3.54004L345.503 2.59863C340.542 15.4924 324.871 60.0743 327.11 62.2988C329.409 64.5774 342.251 62.577 347.534 58.9775C357.453 41.0144 365.835 22.6965 373.582 0.953125L389.858 0ZM88.5576 55.2197C86.7325 57.6857 84.6637 60.1482 82.3584 62.5977C78.2479 66.965 72.8638 72.6168 65.8965 77.9316C58.8077 83.3391 50.8064 89.7317 42.9893 94.7256C37.8152 98.031 31.9731 101.839 27.9492 104.807L58.0342 104.23C59.0857 92.6655 66.5184 79.8736 75.9902 71.9385L89.7324 81.1133C85.1765 86.6959 66.8875 108.738 81.874 111.253C85.6931 111.894 91.2346 111.5 98.0029 109.794C104.439 108.172 113.613 101.891 120.298 93.751C123.547 89.7944 125.725 85.965 126.723 82.7861C127.718 79.6134 127.293 78.01 126.885 77.2676C126.658 76.8545 126.231 76.3042 124.648 75.6816C122.829 74.9663 120.404 74.5106 116.86 74.0049C113.743 73.56 109.385 73.0389 105.483 71.9385C101.462 70.8041 96.5933 68.7256 92.9521 64.2441C90.6751 61.4416 89.2791 58.3734 88.5576 55.2197ZM236.178 75.9971C243.354 60.4474 253.248 16.239 238.765 23.0059C225.714 35.6936 216.144 51.4519 207.694 67.4834C202.037 78.7006 197.892 88.5872 195.919 97.3477C195.377 99.7539 193.767 108.522 197.338 109.407C215.478 113.904 230.106 89.1515 236.178 75.9971ZM308.33 21.7598C310.04 12.8956 295.499 12.9161 289.536 15.4111L266.622 68.6133C281.638 57.6338 304.998 39.0244 308.33 21.7598Z" fill="inherit"/>
 			        </svg>
 			        <div class="logotype-wrapper">
 			        </div>
 		        </div>
-	          <button data-link="photos" data-anchor="end" type="button" class="button ml-auto">
+	          <button data-link="photos" data-anchor="end" type="button" class="button compact-hidden ml-auto">
 	            <span class="button-bg"></span>
 	            <span class="button-label">SHOW ME PHOTOS</span>
 	          </button>
@@ -212,11 +213,19 @@
             <span>production</span>
           </h1>
 	        <div class="header-buttons">
-	          <button data-link="videos" type="button" class="button">
-	            <span class="button-bg"></span>
-	            <span class="button-label">SHOW ME FILMS</span>
-	          </button>
 		        <div class="flex gap-2">
+		          <button data-link="videos" type="button" class="button compact-hidden">
+		            <span class="button-bg"></span>
+		            <span class="button-label">SHOW ME FILMS</span>
+		          </button>
+			        <button type="button" class="button menu-btn">
+				        <div class="menu-btn-overlay"></div>
+				        <div class="btn-menu-list">
+				        </div>
+				        <div class="relative z-3 px-4 py-3 bg-white"><span class="button-label">FourSeasons</span></div>
+			        </button>
+		        </div>
+		        <div class="flex gap-1 md:gap-2">
 			        <!-- biome-ignore lint/a11y/useAnchorContent: <explanation> -->
 			        <a target="_blank" class="link icon" href="https://www.instagram.com/hey.lirules/">
 				        <svg aria-label="instagram-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -239,7 +248,7 @@
     </header>
 
     <section id="videos" class="videos-wrapper">
-      <h2>Four Seasons Resort The Nam Hai - <span>Hoi An, Vietnam</span></h2>
+      <h2 id="Four Seasonsafter">Four Seasons Resort The Nam Hai - <span>Hoi An, Vietnam</span></h2>
       <div class="videos-grid">
         <div class="video-poster">
 	        <wistia-player
@@ -248,131 +257,211 @@
 		        media-id="id3mbyyl5t"
 	        ></wistia-player>
 	        <div class="video-overlay">
-		        <button type="button" class="link">
-			        <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-				        <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-			        </svg>
-			        <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-				        <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-			        </svg>
-			        <span> WATCH </span>
-		        </button>
-	        </div>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
+			    </div>
         </div>
         <div class="video-poster">
 	        <wistia-player
 		        media-id="gy1dm4z29e"
 	        ></wistia-player>
 	        <div class="video-overlay">
-		        <button type="button" class="link">
-			        <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-				        <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-			        </svg>
-			        <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-				        <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-			        </svg>
-			        <span> WATCH </span>
-		        </button>
-	        </div>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
+			    </div>
         </div>
 	      <div class="video-poster">
 		      <wistia-player
 			      media-id="u2o25xrh8o"
 		      ></wistia-player>
 		      <div class="video-overlay">
-			      <button type="button" class="link">
-				      <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-					      <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-				      </svg>
-				      <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-					      <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-				      </svg>
-				      <span> WATCH </span>
-			      </button>
-		      </div>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
+			    </div>
 	      </div>
 	      <div class="video-poster">
 		      <wistia-player
 			      media-id="qwezklzd8p"
 		      ></wistia-player>
 		      <div class="video-overlay">
-			      <button type="button" class="link">
-				      <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-					      <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-				      </svg>
-				      <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-					      <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-				      </svg>
-				      <span> WATCH </span>
-			      </button>
-		      </div>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
+			    </div>
 	      </div>
 	      <div class="video-poster">
 		      <wistia-player
 			      media-id="wtbc606r3y"
 		      ></wistia-player>
 		      <div class="video-overlay">
-			      <button type="button" class="link">
-				      <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-					      <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-				      </svg>
-				      <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-					      <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-				      </svg>
-				      <span> WATCH </span>
-			      </button>
-		      </div>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
+			    </div>
 	      </div>
 	      <div class="video-poster">
 		      <wistia-player
 			      media-id="y8fk61ww01"
 		      ></wistia-player>
 		      <div class="video-overlay">
-			      <button type="button" class="link">
-				      <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-					      <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-				      </svg>
-				      <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-					      <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-				      </svg>
-				      <span> WATCH </span>
-			      </button>
-		      </div>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
+			    </div>
 	      </div>
 	      <div class="video-poster">
 		      <wistia-player
 			      media-id="r0dmgd6ov7"
 		      ></wistia-player>
 		      <div class="video-overlay">
-			      <button type="button" class="link">
-				      <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-					      <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-				      </svg>
-				      <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-					      <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-				      </svg>
-				      <span> WATCH </span>
-			      </button>
-		      </div>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
+			    </div>
 	      </div>
 	      <div class="video-poster">
 		      <wistia-player
 			      media-id="0m238mooon"
 		      ></wistia-player>
 		      <div class="video-overlay">
-			      <button type="button" class="link">
-				      <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-					      <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-				      </svg>
-				      <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-					      <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-				      </svg>
-				      <span> WATCH </span>
-			      </button>
-		      </div>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
+			    </div>
 	      </div>
       </div>
-	    <h2>InterContinental Da Nang Sun Peninsula Resort - <span>Da Nang, Vietnam</span></h2>
+	    <h2 id="InterContinentalafter">InterContinental Da Nang Sun Peninsula Resort - <span>Da Nang, Vietnam</span></h2>
 	    <div class="videos-grid">
 
 		    <div class="video-poster">
@@ -380,32 +469,51 @@
 				    media-id="devieme25m"
 			    ></wistia-player>
 			    <div class="video-overlay">
-				    <button type="button" class="link">
-					    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <span> WATCH </span>
-				    </button>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
 			    </div>
 		    </div>
-
 		    <div class="video-poster">
 			    <wistia-player
 				    media-id="13wxbufn0s"
 			    ></wistia-player>
 			    <div class="video-overlay">
-				    <button type="button" class="link">
-					    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <span> WATCH </span>
-				    </button>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
 			    </div>
 		    </div>
 		    <div class="video-poster">
@@ -413,15 +521,25 @@
 				    media-id="d9lgpp1z22"
 			    ></wistia-player>
 			    <div class="video-overlay">
-				    <button type="button" class="link">
-					    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <span> WATCH </span>
-				    </button>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
 			    </div>
 		    </div>
 		    <div class="video-poster">
@@ -429,139 +547,398 @@
 				    media-id="gh7s6qhhuc"
 			    ></wistia-player>
 			    <div class="video-overlay">
-				    <button type="button" class="link">
-					    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <span> WATCH </span>
-				    </button>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
 			    </div>
 		    </div>
 	    </div>
-	    <h2>Radisson RED <span>Da Nang, Vietnam</span></h2>
+	    <h2 id="Radisson Redafter">Radisson RED <span>Da Nang, Vietnam</span></h2>
 	    <div class="videos-grid">
 		    <div class="video-poster">
 			    <wistia-player
+				    muted="false"
 				    media-id="8cn2flurtz"
 			    ></wistia-player>
 			    <div class="video-overlay">
-				    <button type="button" class="link">
-					    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <span> WATCH </span>
-				    </button>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
 			    </div>
 		    </div>
 	    </div>
 
-	    <h2>Lifestyle <span>THE WORLD</span></h2>
+	    <h2 id="Lifestyleafter">Lifestyle <span>THE WORLD</span></h2>
 	    <div class="videos-grid">
 		    <div class="video-poster">
 			    <wistia-player media-id="ww6repx97l"></wistia-player>
 			    <div class="video-overlay">
-				    <button type="button" class="link">
-					    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <span> WATCH </span>
-				    </button>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
 			    </div>
 		    </div>
 		    <div class="video-poster">
 			    <wistia-player media-id="un1nudrxnx"></wistia-player>
 			    <div class="video-overlay">
-				    <button type="button" class="link">
-					    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <span> WATCH </span>
-				    </button>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
 			    </div>
 		    </div>
 		    <div class="video-poster">
 			    <wistia-player media-id="wlb5zkk1ko"></wistia-player>
 			    <div class="video-overlay">
-				    <button type="button" class="link">
-					    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <span> WATCH </span>
-				    </button>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
 			    </div>
 		    </div>
 		    <div class="video-poster">
 			    <wistia-player media-id="unekaqy7ka"></wistia-player>
 			    <div class="video-overlay">
-				    <button type="button" class="link">
-					    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <span> WATCH </span>
-				    </button>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
 			    </div>
 		    </div>
 		    <div class="video-poster">
 			    <wistia-player media-id="f9ukpnc4gs"></wistia-player>
 			    <div class="video-overlay">
-				    <button type="button" class="link">
-					    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <span> WATCH </span>
-				    </button>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
+			    </div>
+		    </div>
+		    <div class="video-poster">
+			    <wistia-player media-id="qf6nmdqtwm"></wistia-player>
+			    <div class="video-overlay">
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
+			    </div>
+		    </div>
+		    <div class="video-poster">
+			    <wistia-player media-id="tav8e9s1rj"></wistia-player>
+			    <div class="video-overlay">
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
+			    </div>
+		    </div>
+		    <div class="video-poster">
+			    <wistia-player media-id="0yanha3hsy"></wistia-player>
+			    <div class="video-overlay">
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
+			    </div>
+		    </div>
+		    <div class="video-poster">
+			    <wistia-player media-id="hmqw11513t"></wistia-player>
+			    <div class="video-overlay">
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
+			    </div>
+		    </div>
+		    <div class="video-poster">
+			    <wistia-player media-id="xq2j51ojpo"></wistia-player>
+			    <div class="video-overlay">
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
+			    </div>
+		    </div>
+		    <div class="video-poster">
+			    <wistia-player media-id="6jobgtvi7v"></wistia-player>
+			    <div class="video-overlay">
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
+			    </div>
+		    </div>
+		    <div class="video-poster">
+			    <wistia-player media-id="f2b1bl5fr6"></wistia-player>
+			    <div class="video-overlay">
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
 			    </div>
 		    </div>
 	    </div>
-	    <h2>UGS -<span>Insta360, 7artisans, Suniast</span></h2>
+	    <h2 id="UGCafter">UGS -<span>Insta360, 7artisans, Suniast</span></h2>
 	    <div class="videos-grid">
 		    <div class="video-poster">
 			    <wistia-player media-id="itr3r8heq1"></wistia-player>
 			    <div class="video-overlay">
-				    <button type="button" class="link">
-					    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <span> WATCH </span>
-				    </button>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
 			    </div>
 		    </div>
 		    <div class="video-poster">
 			    <wistia-player media-id="5qoicqezdk"></wistia-player>
 			    <div class="video-overlay">
-				    <button type="button" class="link">
-					    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
-						    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
-					    </svg>
-					    <span> WATCH </span>
-				    </button>
+				    <div class="watch-button">
+					    <button type="button" class="link">
+						    <svg class="svg-play" aria-label="icon-watch" viewBox="0 0 67 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M1 74.5184L64.0352 38.1238L1 1.73047V74.5184Z" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <svg class="svg-pause" aria-label="icon-pause" width="84" height="73" viewBox="0 0 84 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M23.9201 72.9988V0.210938M60.0793 72.9988V0.210938" stroke-width="4" stroke="var(--color-dark)"/>
+						    </svg>
+						    <span> WATCH </span>
+					    </button>
+					    <button type="button" class="resize">
+						    <svg aria-label="full-screen-icon" viewBox="0 0 24 24" stroke="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M21 9V3H15" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M3 15V21H9" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M21 3L13.5 10.5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+							    <path d="M10.5 13.5L3 21" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="inherit"/>
+						    </svg>
+					    </button>
+				    </div>
 			    </div>
 		    </div>
 	    </div>
