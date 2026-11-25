@@ -2,16 +2,16 @@ import { animate, createTimeline, spring, stagger, utils } from "animejs";
 
 const buttons = utils.$(".button");
 const ease = spring({
-	bounce: 0.5,
-	duration: 628,
+  bounce: 0.5,
+  duration: 628,
 });
 
 for (const [idx, button] of buttons.entries()) {
-	const label = button.querySelector(".button-label") as HTMLElement;
-	const bg = button.querySelector(".button-bg") as HTMLElement;
-	if (!label || !bg) break;
+  const label = button.querySelector(".button-label") as HTMLElement;
+  const bg = button.querySelector(".button-bg") as HTMLElement;
+  if (!label || !bg) break;
 
-	const catSvg = `<svg class="button-cat" width="60" height="60" viewBox="0 0 1555 1435" fill="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
+  const catSvg = `<svg class="button-cat" width="60" height="60" viewBox="0 0 1555 1435" fill="var(--color-dark)" xmlns="http://www.w3.org/2000/svg">
         <path d="M1532.61 868.283C1532.61 1165.9 1388.4 1336.74 772.073 1336.74C173.916 1336.74 21.5029 1165.9 21.5029 868.283C21.5029 570.663 359.776 329.395 777.058 329.395C1194.34 329.395 1532.61 570.663 1532.61 868.283Z" fill="var(--color-white)"/>
         <path class='earR' d="M1491.42 4.22131C1375.45 -49.7095 940.42 430.932 940.42 430.932L1529.27 877.605C1529.27 877.605 1607.38 58.1521 1491.42 4.22131Z" fill="var(--color-white)"/>
         <path class='earL' d="M63.585 4.22131C179.549 -49.7095 614.581 430.932 614.581 430.932L25.7305 877.605C25.7305 877.605 -52.3789 58.1521 63.585 4.22131Z" fill="var(--color-white)"/>
@@ -50,187 +50,189 @@ for (const [idx, button] of buttons.entries()) {
        </svg>
     `;
 
-	button.insertAdjacentHTML("beforeend", catSvg);
+  button.insertAdjacentHTML("beforeend", catSvg);
 
-	for (let i = 0; i < 4; i++) {
-		button.insertAdjacentHTML(
-			"afterbegin",
-			`<div class="button-decor-wrapper"><div class="button-decor"></div></div>`,
-		);
-	}
+  for (let i = 0; i < 4; i++) {
+    button.insertAdjacentHTML(
+      "afterbegin",
+      `<div class="button-decor-wrapper"><div class="button-decor"></div></div>`,
+    );
+  }
 
-	const catLink = button.querySelector(".button-cat") as HTMLElement;
-	const tl = createTimeline({ duration: 500, autoplay: false });
+  const catLink = button.querySelector(".button-cat") as HTMLElement;
+  const tl = createTimeline({ duration: 500, autoplay: false });
 
-	const muscate = button.querySelectorAll(".muscate") as HTMLElement;
-	const earR = button.querySelector(".earR") as HTMLElement;
-	const earL = button.querySelector(".earL") as HTMLElement;
-	const eyeR = button.querySelector(".eyeR") as HTMLElement;
-	const eyeL = button.querySelector(".eyeL") as HTMLElement;
-	const eyeTop = button.querySelectorAll(".eyeTop");
-	const eyeLMaskEllipse = button.querySelector(
-		".eyeLMask ellipse",
-	) as HTMLElement;
-	const muscateLpath = button.querySelectorAll(".muscateL path");
-	const muscateRpath = button.querySelectorAll(".muscateR path");
-	const eyeRMaskEllipse = button.querySelector(
-		".eyeRMask ellipse",
-	) as HTMLElement;
-	const nouse = button.querySelector(".nouse") as HTMLElement;
-	const arrows = button.querySelectorAll(".button-decor-wrapper");
+  const muscate = button.querySelectorAll(
+    ".muscate",
+  ) as NodeListOf<HTMLElement>;
+  const earR = button.querySelector(".earR") as HTMLElement;
+  const earL = button.querySelector(".earL") as HTMLElement;
+  const eyeR = button.querySelector(".eyeR") as HTMLElement;
+  const eyeL = button.querySelector(".eyeL") as HTMLElement;
+  const eyeTop = button.querySelectorAll(".eyeTop");
+  const eyeLMaskEllipse = button.querySelector(
+    ".eyeLMask ellipse",
+  ) as HTMLElement;
+  const muscateLpath = button.querySelectorAll(".muscateL path");
+  const muscateRpath = button.querySelectorAll(".muscateR path");
+  const eyeRMaskEllipse = button.querySelector(
+    ".eyeRMask ellipse",
+  ) as HTMLElement;
+  const nouse = button.querySelector(".nouse") as HTMLElement;
+  const arrows = button.querySelectorAll(".button-decor-wrapper");
 
-	animate(muscate, {
-		translateX: [{ to: -5, ease }],
-		loop: true,
-		alternate: true,
-		composition: "blend",
-	});
+  animate(muscate, {
+    translateX: [{ to: -5, ease }],
+    loop: true,
+    alternate: true,
+    composition: "blend",
+  });
 
-	tl.add(
-		bg,
-		{
-			y: "100%",
-			duration: 300,
-			rotate: [0, utils.randomPick([9, -13]), 0],
-		},
-		0,
-	);
-	tl.add(
-		label,
-		{
-			rotate: [
-				{ from: 0, to: 10, duration: 100 },
-				{ from: 3, to: -10, duration: 200 },
-			],
-			y: { from: 0, to: "-200%", duration: 500, ease },
-			ease: "easeOut",
-		},
-		0,
-	);
-	tl.add(
-		catLink,
-		{
-			keyframes: {
-				"0%": { translateY: 0, ease },
-				"40%": { rotate: -10, ease },
-				"80%": { scale: 1.2, ease },
-				"100%": { translateY: -40, rotate: 0, scale: 0.6 },
-			},
-			duration: 500,
-			ease: "easeOut",
-		},
-		0,
-	);
-	tl.add(
-		earR,
-		{
-			translateY: [0, 100, 0],
-			translateX: [0, -50, 0],
-			rotate: [0, -30, 0],
-			duration: 400,
-		},
-		0,
-	);
+  tl.add(
+    bg,
+    {
+      y: "100%",
+      duration: 300,
+      rotate: [0, utils.randomPick([9, -13]), 0],
+    },
+    0,
+  );
+  tl.add(
+    label,
+    {
+      rotate: [
+        { from: 0, to: 10, duration: 100 },
+        { from: 3, to: -10, duration: 200 },
+      ],
+      y: { from: 0, to: "-200%", duration: 500, ease },
+      ease: "easeOut",
+    },
+    0,
+  );
+  tl.add(
+    catLink,
+    {
+      keyframes: {
+        "0%": { translateY: 0, ease },
+        "40%": { rotate: -10, ease },
+        "80%": { scale: 1.2, ease },
+        "100%": { translateY: -40, rotate: 0, scale: 0.6 },
+      },
+      duration: 500,
+      ease: "easeOut",
+    },
+    0,
+  );
+  tl.add(
+    earR,
+    {
+      translateY: [0, 100, 0],
+      translateX: [0, -50, 0],
+      rotate: [0, -30, 0],
+      duration: 400,
+    },
+    0,
+  );
 
-	tl.add(
-		earL,
-		{
-			translateY: [0, 100, 0],
-			translateX: [0, 50, 0],
-			rotate: [0, 30, 0],
-			duration: 400,
-		},
-		0,
-	);
-	tl.add(
-		eyeTop,
-		{
-			y: [0, -200, 50],
-			duration: 400,
-		},
-		200,
-	);
-	tl.add(
-		eyeLMaskEllipse,
-		{
-			translateY: [0, -150, 0],
-			translateX: [0, -100, 0],
-			delay: 200,
-			duration: 500,
-		},
-		0,
-	);
-	tl.add(
-		eyeL,
-		{
-			translateY: [0, -100, 0],
-			delay: 200,
-			duration: 500,
-		},
-		0,
-	);
+  tl.add(
+    earL,
+    {
+      translateY: [0, 100, 0],
+      translateX: [0, 50, 0],
+      rotate: [0, 30, 0],
+      duration: 400,
+    },
+    0,
+  );
+  tl.add(
+    eyeTop,
+    {
+      y: [0, -200, 50],
+      duration: 400,
+    },
+    200,
+  );
+  tl.add(
+    eyeLMaskEllipse,
+    {
+      translateY: [0, -150, 0],
+      translateX: [0, -100, 0],
+      delay: 200,
+      duration: 500,
+    },
+    0,
+  );
+  tl.add(
+    eyeL,
+    {
+      translateY: [0, -100, 0],
+      delay: 200,
+      duration: 500,
+    },
+    0,
+  );
 
-	tl.add(
-		eyeRMaskEllipse,
-		{
-			y: [0, -150, 0],
-			translateX: [0, 100, 0],
-			delay: 200,
-			duration: 500,
-		},
-		0,
-	);
-	tl.add(
-		eyeR,
-		{
-			y: [0, -100, 0],
-			delay: 200,
-			duration: 500,
-		},
-		0,
-	);
-	tl.add(
-		nouse,
-		{
-			translateY: [0, -200, 0],
-			duration: 500,
-		},
-		200,
-	);
-	tl.add(
-		muscateLpath,
-		{
-			translateX: 300,
-			opacity: 1,
-			delay: stagger(90),
-			duration: 300,
-			ease,
-		},
-		400,
-	);
-	tl.add(
-		muscateRpath,
-		{
-			translateX: 300,
-			opacity: 1,
-			delay: stagger(90),
-			duration: 300,
-			ease,
-		},
-		400,
-	);
-	tl.add(
-		arrows,
-		{
-			scale: [1, 2],
-			delay: stagger(100),
-		},
-		0,
-	);
-	button.addEventListener("mouseenter", () => {
-		tl.play();
-	});
-	button.addEventListener("mouseleave", () => {
-		tl.reverse();
-	});
+  tl.add(
+    eyeRMaskEllipse,
+    {
+      y: [0, -150, 0],
+      translateX: [0, 100, 0],
+      delay: 200,
+      duration: 500,
+    },
+    0,
+  );
+  tl.add(
+    eyeR,
+    {
+      y: [0, -100, 0],
+      delay: 200,
+      duration: 500,
+    },
+    0,
+  );
+  tl.add(
+    nouse,
+    {
+      translateY: [0, -200, 0],
+      duration: 500,
+    },
+    200,
+  );
+  tl.add(
+    muscateLpath,
+    {
+      translateX: 300,
+      opacity: 1,
+      delay: stagger(90),
+      duration: 300,
+      ease,
+    },
+    400,
+  );
+  tl.add(
+    muscateRpath,
+    {
+      translateX: 300,
+      opacity: 1,
+      delay: stagger(90),
+      duration: 300,
+      ease,
+    },
+    400,
+  );
+  tl.add(
+    arrows,
+    {
+      scale: [1, 2],
+      delay: stagger(100),
+    },
+    0,
+  );
+  button.addEventListener("mouseenter", () => {
+    tl.play();
+  });
+  button.addEventListener("mouseleave", () => {
+    tl.reverse();
+  });
 }
