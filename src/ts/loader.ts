@@ -9,12 +9,12 @@ window.addEventListener("load", () => {
   document.body.style.overflow = "hidden";
   const loader = document.querySelector(".loader") as HTMLElement;
   const classList = loader.classList;
-  const h1 = document.querySelector("h1");
-  const buttons = document.querySelectorAll(
+  const h1 = document.querySelector("h1") as HTMLElement;
+  const buttons = document.querySelectorAll<HTMLElement>(
     ".header-buttons .button:not(.menu-btn)",
   );
   const logotype = document.querySelector(".logotype") as HTMLElement;
-  const links = document.querySelectorAll(".header-buttons .link");
+  const links = document.querySelectorAll<HTMLElement>(".header-buttons .link");
   classList.add("wait");
   const h1A = waapi.animate(h1, {
     opacity: [0, 1],
