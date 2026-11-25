@@ -19,7 +19,7 @@ let current = 0;
 window.addEventListener("load", () => {
   history.scrollRestoration = "manual";
   document.querySelector("header")?.scrollIntoView({ block: "start" });
-
+  document.querySelector(".header-texts").classList.remove("loading");
   function change() {
     let nextIdx = current;
     while (nextIdx === current) nextIdx = Math.floor(Math.random() * count);

@@ -1,20 +1,48 @@
 import { createTimeline, spring, waapi, stagger } from "animejs";
+
+// HTML разобран
+const domReady = new Promise<void>((resolve) => {
+  if (document.readyState !== "loading") resolve();
+  else
+    document.addEventListener("DOMContentLoaded", () => resolve(), {
+      once: true,
+    });
+});
+// все <link rel="stylesheet"> загружены
+const cssReady = Promise.all(
+  // @ts-ignore-next-line
+  [...document.querySelectorAll<HTMLLinkElement>('link[rel="stylesheet"]')].map(
+    (link) =>
+      link.sheet
+        ? Promise.resolve()
+        : new Promise<void>((resolve) => {
+            link.addEventListener("load", () => resolve(), { once: true });
+            link.addEventListener("error", () => resolve(), { once: true }); // не зависаем при ошибке
+          }),
+  ),
+);
+// шрифты, которые уже используются на странице, загружены
+const fontsReady = document.fonts.ready;
+
+export const pageReady = Promise.all([domReady, cssReady]).then(
+  () => fontsReady,
+);
+
 const ease = spring({
   bounce: 0.5,
   duration: 628,
 });
 
-window.addEventListener("load", () => {
-  document.body.style.maxHeight = "100svh";
-  document.body.style.overflow = "hidden";
-  const loader = document.querySelector(".loader") as HTMLElement;
-  const classList = loader.classList;
-  const h1 = document.querySelector("h1") as HTMLElement;
-  const buttons = document.querySelectorAll<HTMLElement>(
-    ".header-buttons .button:not(.menu-btn)",
-  );
-  const logotype = document.querySelector(".logotype") as HTMLElement;
-  const links = document.querySelectorAll<HTMLElement>(".header-buttons .link");
+const loader = document.querySelector(".loader") as HTMLElement;
+const classList = loader.classList;
+const h1 = document.querySelector("h1") as HTMLElement;
+const buttons = document.querySelectorAll<HTMLElement>(
+  ".header-buttons .button:not(.menu-btn)",
+);
+const logotype = document.querySelector(".logotype") as HTMLElement;
+const links = document.querySelectorAll<HTMLElement>(".header-buttons .link");
+
+pageReady.then(() => {
   classList.add("wait");
   const h1A = waapi.animate(h1, {
     opacity: [0, 1],
@@ -36,8 +64,6 @@ window.addEventListener("load", () => {
   const tl = createTimeline({
     onComplete() {
       classList.add("hide");
-      document.body.style.maxHeight = "auto";
-      document.body.style.overflow = "auto";
     },
   })
     .sync(h1A, 0)

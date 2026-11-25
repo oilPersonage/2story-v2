@@ -15,7 +15,6 @@
     <title>2story</title>
     <link href="/src/style.css" rel="stylesheet" />
     <link rel="preload" href="/header.mp4" as="video" type="video/mp4" />
-    <script src="https://fast.wistia.com/player.js" async></script>
     <script>
       window.wistiaOptions = {
         _all: {
@@ -191,7 +190,7 @@
           src="/header.mp4"
           alt="interContinental Reals"
         ></video>
-        <div class="header-texts">
+        <div class="header-texts loading">
           <div class="header-buttons">
             <div id="logotype" class="logotype">
               <svg
@@ -2391,6 +2390,8 @@
 
     <script type="module" src="/src/ts/loader.ts"></script>
     <div class="loader"></div>
+
+    <script src="https://fast.wistia.com/player.js" async></script>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
