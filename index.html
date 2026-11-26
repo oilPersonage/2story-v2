@@ -33,6 +33,7 @@
     </script>
   </head>
   <body>
+    <div class="scroller">
     <section id="photos" class="photos-wrapper">
       <h2 id="Radisson Redbefore">
         Radisson RED - <span>Da Nang, Vietnam</span>
@@ -186,11 +187,20 @@
         <video
           autoplay
           muted
+          class="pointer-events-none"
           loop
+          playsinline
+          webkit-playsinline
+          disablepictureinpicture
+          disableremoteplayback
+          controlslist="nofullscreen nodownload noremoteplayback"
+          preload="auto"
+          tabindex="-1"
+          aria-hidden="true"
           src="/header.mp4"
           alt="interContinental Reals"
         ></video>
-        <div class="header-texts loading">
+        <div class="header-texts loading isolate">
           <div class="header-buttons">
             <div id="logotype" class="logotype">
               <svg
@@ -217,32 +227,34 @@
             </button>
           </div>
           <h1>
-            <span class="h1-animate-wrapper">
-              <span class="h1-animate-inner max-w-24">
-                <span>THE</span>
-                <span>OUR</span>
-                <span>ONE</span>
-                <span>NEW</span>
-                <span>THE</span>
-                <span>PRO</span>
-              </span>
-            </span>
+	          <span class="h1-wrapper">
+	            <span class="h1-animate-wrapper">
+	              <span class="h1-animate-inner max-w-24">
+	                <span>THE</span>
+	                <span>OUR</span>
+	                <span>ONE</span>
+	                <span>NEW</span>
+	                <span>THE</span>
+	                <span>PRO</span>
+	              </span>
+	            </span>
 
-            <span>creative</span>
-            <span class="h1-animate-wrapper">
-              <span class="h1-animate-inner max-w-64">
-                <span>brand film</span>
-                <span>HOTEL FILM</span>
-                <span>STORY REEL</span>
-                <span>BEACH VIBE</span>
-                <span>DREAM</span>
-                <span>VILLA LIFE</span>
-              </span>
-            </span>
+	            <span>creative</span>
+	            <span class="h1-animate-wrapper">
+	              <span class="h1-animate-inner max-w-64">
+	                <span>brand film</span>
+	                <span>HOTEL FILM</span>
+	                <span>STORY REEL</span>
+	                <span>BEACH VIBE</span>
+	                <span>DREAM</span>
+	                <span>VILLA LIFE</span>
+	              </span>
+	            </span>
 
-            <span>production</span>
+	            <span>production</span>
+	          </span>
           </h1>
-          <div class="header-buttons">
+          <div class="header-buttons isolate">
             <div class="flex gap-1">
               <button
                 data-link="videos"
@@ -379,43 +391,7 @@
                 </svg>
                 <span> WATCH </span>
               </button>
-              <button type="button" class="resize">
-                <svg
-                  aria-label="full-screen-icon"
-                  viewBox="0 0 24 24"
-                  stroke="var(--color-dark)"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M21 9V3H15"
-                    stroke-width="1"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke="inherit"
-                  />
-                  <path
-                    d="M3 15V21H9"
-                    stroke-width="1"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke="inherit"
-                  />
-                  <path
-                    d="M21 3L13.5 10.5"
-                    stroke-width="1"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke="inherit"
-                  />
-                  <path
-                    d="M10.5 13.5L3 21"
-                    stroke-width="1"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke="inherit"
-                  />
-                </svg>
-              </button>
+              <button type="button" class="resize"></button>
             </div>
           </div>
         </div>
@@ -2387,6 +2363,7 @@
         </div>
       </div>
     </section>
+    </div>
 
     <script type="module" src="/src/ts/loader.ts"></script>
     <div class="loader"></div>
