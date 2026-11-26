@@ -28,10 +28,7 @@ export const pageReady = Promise.all([domReady, cssReady]).then(
 	() => fontsReady,
 );
 
-const ease = spring({
-	bounce: 0.5,
-	duration: 628,
-});
+const ease = spring({ bounce: 0.5, duration: 628 });
 
 const loader = document.querySelector(".loader") as HTMLElement;
 const classList = loader.classList;
@@ -61,21 +58,15 @@ pageReady.then(() => {
 		duration: 600,
 		autoplay: false,
 	});
-	const tl = createTimeline({
-		onComplete() {
-			classList.add("hide");
+	const tl = createTimeline({}).sync(h1A, 0).sync(buttonsA, 900).add(
+		loader,
+		{
+			opacity: 0,
+			duration: 600,
+			ease: "ease-in",
 		},
-	})
-		.sync(h1A, 0)
-		.sync(buttonsA, 900)
-		.add(
-			loader,
-			{
-				opacity: 0,
-				duration: 600,
-				ease: "ease-in",
-			},
-			1500,
-		);
+		1500,
+	);
 	tl.play();
+	classList.add("hide");
 });
